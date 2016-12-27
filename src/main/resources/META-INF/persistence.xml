@@ -5,10 +5,10 @@
              version="2.1">
     <persistence-unit name="demo01-pu">
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <!--<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>-->
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
-            <property name="javax.persistence.jdbc.user" value="demo01"/>
-            <property name="javax.persistence.jdbc.password" value="demo01"/>
+            <!--<property name="javax.persistence.jdbc.user" value="demo01"/>-->
+            <!--<property name="javax.persistence.jdbc.password" value="demo01"/>-->
         </properties>
     </persistence-unit>
 </persistence>
