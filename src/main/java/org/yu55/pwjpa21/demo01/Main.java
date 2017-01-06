@@ -11,6 +11,12 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("demo01-pu");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
+
+        JournalService journalService = new JournalService(em);
+
+        tx.begin();
+        journalService.createJournal(System.currentTimeMillis(), "CHIP", 167);
+        tx.commit();
     }
 
 }
