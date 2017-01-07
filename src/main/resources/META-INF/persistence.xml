@@ -4,10 +4,17 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
     <persistence-unit name="demo01-pu">
+        <!-- "A list of all named managed persistence classes must be specified in Java SE environments to insure
+             portability." @Entity annotation is still needed on entity clases.
+             Check: http://stackoverflow.com/questions/1780341/do-i-need-class-elements-in-persistence-xml -->
         <class>org.yu55.pwjpa21.demo01.Journal</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
 
+            <!-- "Specifies the action to be taken by the persistence provider with regard to the database artifacts.
+                 The values for this property are none, create, drop-and-create, drop. If this property
+                 is not specified, it is assumed that schema generation is not needed or will be initiated by
+                 other means, and, by default, no schema generation actions will be taken on the database." -->
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 
         </properties>
