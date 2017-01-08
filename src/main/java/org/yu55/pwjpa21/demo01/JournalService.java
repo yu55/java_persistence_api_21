@@ -15,4 +15,8 @@ public class JournalService {
         entityManager.persist(journal);
         return journal;
     }
+
+    Journal findJournal(Long id) {
+        return entityManager.find(Journal.class, id);
+    }
 }

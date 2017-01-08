@@ -15,8 +15,14 @@ public class Main {
         JournalService journalService = new JournalService(em);
 
         tx.begin();
-        journalService.createJournal(System.currentTimeMillis(), "CHIP", 167);
+        Journal journal = journalService.createJournal(1022L, "CHIP", 167);
         tx.commit();
+
+        System.out.println("journal = " + journal);
+
+        journal = journalService.findJournal(1022L);
+
+        System.out.println("journal = " + journal);
     }
 
 }
