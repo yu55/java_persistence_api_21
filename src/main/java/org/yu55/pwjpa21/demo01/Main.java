@@ -26,6 +26,12 @@ public class Main {
         journal = journalService.updateTitle(1022L, "CHIP Magazine");
         tx.commit();
         System.out.println("journal = " + journal);
+
+        tx.begin();
+        journalService.removeJournal(1022L);
+        tx.commit();
+        journal = journalService.findJournal(1022L);
+        System.out.println("removed journal = " + journal);
     }
 
 }

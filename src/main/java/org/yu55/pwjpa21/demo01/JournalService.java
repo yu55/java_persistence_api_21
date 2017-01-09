@@ -27,4 +27,11 @@ public class JournalService {
         }
         return journal;
     }
+
+    void removeJournal(Long id) {
+        Journal journal = entityManager.find(Journal.class, id);
+        if (journal != null) {
+            entityManager.remove(journal);
+        }
+    }
 }
