@@ -44,7 +44,7 @@ public class Journal {
         this.numberOfPages = numberOfPages;
     }
 
-    public void setTitle(String title) {
+    void setTitle(String title) {
         this.title = title;
     }
 
