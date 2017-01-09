@@ -17,11 +17,14 @@ public class Main {
         tx.begin();
         Journal journal = journalService.createJournal(1022L, "CHIP", 167);
         tx.commit();
-
         System.out.println("journal = " + journal);
 
         journal = journalService.findJournal(1022L);
+        System.out.println("journal = " + journal);
 
+        tx.begin();
+        journal = journalService.updateTitle(1022L, "CHIP Magazine");
+        tx.commit();
         System.out.println("journal = " + journal);
     }
 

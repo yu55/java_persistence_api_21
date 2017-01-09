@@ -19,4 +19,12 @@ public class JournalService {
     Journal findJournal(Long id) {
         return entityManager.find(Journal.class, id);
     }
+
+    Journal updateTitle(Long id, String newTitle) {
+        Journal journal = entityManager.find(Journal.class, id);
+        if (journal != null) {
+            journal.setTitle(newTitle);
+        }
+        return journal;
+    }
 }
