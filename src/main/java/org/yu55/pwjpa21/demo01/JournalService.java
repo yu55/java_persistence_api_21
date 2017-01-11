@@ -61,6 +61,24 @@ public class JournalService {
     }
 
     void removeJournal(Long id) {
+        /*
+        A managed entity instance becomes removed by invoking the remove method on it or by cascading the remove
+        operation.
+        The semantics of the remove operation, applied to an entity X are as follows:
+        - If X is a new entity, it is ignored by the remove operation. However, the remove operation is cascaded to
+        entities referenced by X, if the relationship from X to these other entities is annotated with the
+        cascade=REMOVE or cascade=ALL annotation element value.
+        - If X is a managed entity, the remove operation causes it to become removed. The remove operation is cascaded
+        to entities referenced by X, if the relationships from X to these other entities is annotated with the
+        cascade=REMOVE or cascade=ALL annotation element value.
+        - If X is a detached entity, an IllegalArgumentException will be thrown by the remove operation (or the
+        transaction commit will fail).
+        - If X is a removed entity, it is ignored by the remove operation.
+        - A removed entity X will be removed from the database at or before transaction commit or as a result of the
+        flush operation.
+        After an entity has been removed, its state (except for generated state) will be that of the entity at the point
+        at which the remove operation was called.
+         */
         Journal journal = entityManager.find(Journal.class, id);
         if (journal != null) {
             entityManager.remove(journal);
