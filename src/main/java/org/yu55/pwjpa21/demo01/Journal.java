@@ -30,7 +30,7 @@ public class Journal {
     @Id
     private Long id;
 
-    @Column(name = "TITLE_FULL", length = 100)
+    @Column(name = "TITLE_FULL", length = 100, nullable = false)
     private String title;
 
     @Column(name = "NO_OF_PAGES")

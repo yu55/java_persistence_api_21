@@ -8,6 +8,7 @@
              portability." @Entity annotation is still needed on entity clases.
              Check: http://stackoverflow.com/questions/1780341/do-i-need-class-elements-in-persistence-xml -->
         <class>org.yu55.pwjpa21.demo01.Journal</class>
+        <class>org.yu55.pwjpa21.demo01.CD</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
 
