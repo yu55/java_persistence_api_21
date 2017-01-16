@@ -14,7 +14,7 @@ public class CD {
 
     private String content;
 
-    CD() {
+    protected CD() {
     }
 
     public CD(String title, Genre genre, String content) {
@@ -33,7 +33,7 @@ public class CD {
         this.id = id;
     }
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     public String getTitle() {
         return title;
     }
