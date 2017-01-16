@@ -1,7 +1,7 @@
 package org.yu55.pwjpa21.demo01;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /*
 "The entity class must be annotated with the Entity annotation or denoted in the XML descriptor as an
@@ -13,6 +13,7 @@ final."
 entity classes, and non-entity classes may extend entity classes."
  */
 @Entity
+@Table(name = "T_JOURNAL")
 public class Journal {
 
     /*
@@ -28,8 +29,22 @@ public class Journal {
      */
     @Id
     private Long id;
+
+    @Column(name = "TITLE_FULL", length = 100)
     private String title;
+
+    @Column(name = "NO_OF_PAGES")
     private Integer numberOfPages;
+
+    @Column(name = "RELEASED")
+    @Temporal(TemporalType.DATE)
+    private Date releaseDate;
+
+    @Transient
+    private Integer age;
+
+    @Enumerated(EnumType.STRING)
+    private Genre genre;
 
     /*
     "The entity class must have a no-arg constructor. The entity class may have other constructors as well.
@@ -38,10 +53,12 @@ public class Journal {
     protected Journal() {
     }
 
-    Journal(Long id, String title, Integer numberOfPages) {
+    Journal(Long id, String title, Integer numberOfPages, Date releaseDate, Genre genre) {
         this.id = id;
         this.title = title;
         this.numberOfPages = numberOfPages;
+        this.releaseDate = releaseDate;
+        this.genre = genre;
     }
 
     void setTitle(String title) {
@@ -54,6 +71,9 @@ public class Journal {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", numberOfPages=" + numberOfPages +
+                ", releaseDate=" + releaseDate +
+                ", age=" + age +
+                ", genre=" + genre +
                 '}';
     }
 }

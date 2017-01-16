@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.Date;
 
 public class Main {
 
@@ -15,7 +16,7 @@ public class Main {
         JournalService journalService = new JournalService(em);
 
         tx.begin();
-        Journal journal = journalService.createJournal(1022L, "CHIP", 167);
+        Journal journal = journalService.createJournal(1022L, "CHIP", 167, new Date(), Genre.IT);
         tx.commit();
         System.out.println("added journal = " + journal);
 

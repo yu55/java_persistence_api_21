@@ -1,6 +1,7 @@
 package org.yu55.pwjpa21.demo01;
 
 import javax.persistence.EntityManager;
+import java.util.Date;
 
 public class JournalService {
 
@@ -22,11 +23,11 @@ public class JournalService {
     Use of the cascade annotation element may be used to propagate the effect of an operation to associated entities.
      */
 
-    Journal createJournal(Long id, String title, Integer numberOfPages) {
+    Journal createJournal(Long id, String title, Integer numberOfPages, Date releaseDate, Genre genre) {
         /*
         Entity is created but it's not managed nor persistent yet.
          */
-        Journal journal = new Journal(id, title, numberOfPages);
+        Journal journal = new Journal(id, title, numberOfPages, releaseDate, genre);
         /*
         A new entity instance becomes both managed and persistent by invoking the persist method on it or by cascading
         the persist operation.
