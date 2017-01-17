@@ -11,7 +11,7 @@ import javax.persistence.Persistence;
 
 import static org.junit.Assert.*;
 
-public class CdServiceTest {
+public class JournalTest {
 
     private EntityManagerFactory emf;
     private EntityManager em;
@@ -33,7 +33,7 @@ public class CdServiceTest {
     }
 
     @Test
-    public void shouldCreateCd() {
+    public void testSomething() {
         // when
         tx.begin();
         CD cd = cdService.createCd("CHIP CD 12/2004", Genre.IT, "Zone Alarm Free; DoctorTweak XP; OpenOffice.org");
