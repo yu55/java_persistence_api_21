@@ -2,6 +2,7 @@ package org.yu55.pwjpa21.demo01;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 /*
 "The entity class must be annotated with the Entity annotation or denoted in the XML descriptor as an
@@ -47,22 +48,39 @@ public class Journal {
     private Genre genre;
 
     /*
+    @OneToMany uses by default join table strategy.
+    @JoinColumn changes this strategy to join column (T_CD.JOURNAL_FK)
+     */
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "journal_fk")
+    private Set<CD> cds;
+
+    /*
     "The entity class must have a no-arg constructor. The entity class may have other constructors as well.
     The no-arg constructor must be public or protected."
      */
     protected Journal() {
     }
 
-    Journal(Long id, String title, Integer numberOfPages, Date releaseDate, Genre genre) {
+    Journal(Long id, String title, Integer numberOfPages, Date releaseDate, Genre genre, Set<CD> cds) {
         this.id = id;
         this.title = title;
         this.numberOfPages = numberOfPages;
         this.releaseDate = releaseDate;
         this.genre = genre;
+        this.cds = cds;
     }
 
     void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Set<CD> getCds() {
+        return cds;
     }
 
     @Override
@@ -74,6 +92,7 @@ public class Journal {
                 ", releaseDate=" + releaseDate +
                 ", age=" + age +
                 ", genre=" + genre +
+                ", cds=" + cds +
                 '}';
     }
 }

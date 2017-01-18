@@ -27,7 +27,7 @@ public class JournalService {
         /*
         Entity is created but it's not managed nor persistent yet.
          */
-        Journal journal = new Journal(id, title, numberOfPages, releaseDate, genre);
+        Journal journal = new Journal(id, title, numberOfPages, releaseDate, genre, null);
         /*
         A new entity instance becomes both managed and persistent by invoking the persist method on it or by cascading
         the persist operation.

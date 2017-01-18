@@ -9,7 +9,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import static org.junit.Assert.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import static org.junit.Assert.assertEquals;
 
 public class JournalTest {
 
@@ -33,19 +38,29 @@ public class JournalTest {
     }
 
     @Test
-    public void testSomething() {
+    public void testRelationship() {
+        // given
+        CD cd1 = new CD("CHIP CD 12/2004", Genre.IT, "Zone Alarm Free; DoctorTweak XP; OpenOffice.org");
+        CD cd2 = new CD("CHIP SPECIAL 2004", Genre.IT, "Avast FULL");
+        Set<CD> cds = new HashSet<>(Arrays.asList(cd1, cd2));
+        Journal journal = new Journal(1000L, "CHIP 12/2004", 120, new Date(), Genre.IT, cds);
+
         // when
         tx.begin();
-        CD cd = cdService.createCd("CHIP CD 12/2004", Genre.IT, "Zone Alarm Free; DoctorTweak XP; OpenOffice.org");
-        Long id = cd.getId();
+        em.persist(journal);
+        /*
+        Below loop is necessary when there is no 'cascade' attribute in Journal.csc @OneToMany annotation.
+         */
+//        for(CD cd : journal.getCds()) {
+//            em.persist(cd);
+//        }
         tx.commit();
 
         // then
         tx.begin();
-        cd = em.find(CD.class, id);
-        assertEquals("CHIP CD 12/2004", cd.getTitle());
-        assertEquals(Genre.IT, cd.getGenre());
-        assertEquals("Zone Alarm Free; DoctorTweak XP; OpenOffice.org", cd.getContent());
+        journal = em.find(Journal.class, 1000L);
+        assertEquals("CHIP 12/2004", journal.getTitle());
+        assertEquals(2, journal.getCds().size());
         tx.commit();
     }
 }
