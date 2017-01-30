@@ -49,6 +49,9 @@ public class Journal {
 
     /*
     @OneToMany uses by default join table strategy.
+    Cascade parameter means that given event (parameter value) is propagated to dependent entities, e.g. persisting
+    Journal will persist all dependent CDs. Cascade parameter is an array and may contain more events:
+    'cascade = { PERSIST, REMOVE, MERGE }' or 'cascade = ALL'. There is no 'FIND' event.
     @JoinColumn changes this strategy to join column (T_CD.JOURNAL_FK)
      */
     @OneToMany(cascade = CascadeType.PERSIST)
