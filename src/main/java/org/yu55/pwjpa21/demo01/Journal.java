@@ -52,9 +52,12 @@ public class Journal {
     Cascade parameter means that given event (parameter value) is propagated to dependent entities, e.g. persisting
     Journal will persist all dependent CDs. Cascade parameter is an array and may contain more events:
     'cascade = { PERSIST, REMOVE, MERGE }' or 'cascade = ALL'. There is no 'FIND' event.
+    Fetch type may be LAZY (deferred) or EAGER (immediately). LAZY - won't fill up memory but access db every time.
+    EAGER brings all data into memory reducing database access. LAZY is default to @OneToMany and @ManyToMany. EAGER is
+    default to @OneToOne and @ManyToOne.
     @JoinColumn changes this strategy to join column (T_CD.JOURNAL_FK)
      */
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "journal_fk")
     private Set<CD> cds;
 
