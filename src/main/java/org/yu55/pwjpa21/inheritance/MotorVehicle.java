@@ -1,8 +1,10 @@
 package org.yu55.pwjpa21.inheritance;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@DiscriminatorValue(value = "M")
 class MotorVehicle extends Vehicle {
 
     private String engineType;
