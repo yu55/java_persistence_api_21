@@ -9,6 +9,9 @@
              Check: http://stackoverflow.com/questions/1780341/do-i-need-class-elements-in-persistence-xml -->
         <class>org.yu55.pwjpa21.demo01.Journal</class>
         <class>org.yu55.pwjpa21.demo01.CD</class>
+        <class>org.yu55.pwjpa21.inheritance.Vehicle</class>
+        <class>org.yu55.pwjpa21.inheritance.MotorVehicle</class>
+        <class>org.yu55.pwjpa21.inheritance.Car</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
 
