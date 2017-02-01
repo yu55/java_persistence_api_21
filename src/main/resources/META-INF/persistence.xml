@@ -12,6 +12,9 @@
         <class>org.yu55.pwjpa21.inheritance1.Vehicle</class>
         <class>org.yu55.pwjpa21.inheritance1.MotorVehicle</class>
         <class>org.yu55.pwjpa21.inheritance1.Car</class>
+        <class>org.yu55.pwjpa21.inheritance2.Animal</class>
+        <class>org.yu55.pwjpa21.inheritance2.Mammal</class>
+        <class>org.yu55.pwjpa21.inheritance2.Reptile</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
 
