@@ -12,6 +12,8 @@ entity."
 final."
 "Both abstract and concrete classes can be entities. Entities may extend non-entity classes as well as
 entity classes, and non-entity classes may extend entity classes."
+Entity may be an abstract class - persistence provider will create a table for this enetity. It's just from Java point
+of view it's not possible to instantiate abstract entity.
  */
 @Entity
 @Table(name = "T_JOURNAL")
