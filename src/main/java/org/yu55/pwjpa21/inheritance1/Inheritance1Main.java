@@ -1,11 +1,11 @@
-package org.yu55.pwjpa21.inheritance;
+package org.yu55.pwjpa21.inheritance1;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class InheritanceMain {
+public class Inheritance1Main {
 
     public static void main(String[] args) {
 

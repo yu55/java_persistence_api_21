@@ -1,4 +1,4 @@
-package org.yu55.pwjpa21.inheritance;
+package org.yu55.pwjpa21.inheritance1;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
