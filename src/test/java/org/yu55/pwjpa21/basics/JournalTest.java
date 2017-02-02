@@ -21,14 +21,12 @@ public class JournalTest {
     private EntityManagerFactory emf;
     private EntityManager em;
     private EntityTransaction tx;
-    private CdService cdService;
 
     @Before
     public void initEntityManager() {
         emf = Persistence.createEntityManagerFactory("basics-pu-test");
         em = emf.createEntityManager();
         tx = em.getTransaction();
-        cdService = new CdService(em);
     }
 
     @After

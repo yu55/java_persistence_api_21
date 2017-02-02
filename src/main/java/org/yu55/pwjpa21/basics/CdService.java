@@ -2,7 +2,7 @@ package org.yu55.pwjpa21.basics;
 
 import javax.persistence.EntityManager;
 
-public class CdService {
+class CdService {
 
     private EntityManager entityManager;
 

@@ -3,7 +3,7 @@ package org.yu55.pwjpa21.basics;
 import javax.persistence.EntityManager;
 import java.util.Date;
 
-public class JournalService {
+class JournalService {
 
     private EntityManager entityManager;
 
