@@ -3,12 +3,12 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="demo01-pu">
+    <persistence-unit name="basics-pu">
         <!-- "A list of all named managed persistence classes must be specified in Java SE environments to insure
              portability." @Entity annotation is still needed on entity clases.
              Check: http://stackoverflow.com/questions/1780341/do-i-need-class-elements-in-persistence-xml -->
-        <class>org.yu55.pwjpa21.demo01.Journal</class>
-        <class>org.yu55.pwjpa21.demo01.CD</class>
+        <class>org.yu55.pwjpa21.basics.Journal</class>
+        <class>org.yu55.pwjpa21.basics.CD</class>
         <class>org.yu55.pwjpa21.inheritance1.Vehicle</class>
         <class>org.yu55.pwjpa21.inheritance1.MotorVehicle</class>
         <class>org.yu55.pwjpa21.inheritance1.Car</class>
@@ -26,14 +26,13 @@
 
         </properties>
     </persistence-unit>
-    <persistence-unit name="demo01-pu-test">
+    <persistence-unit name="basics-pu-test">
         <mapping-file>META-INF/mapping.xml</mapping-file>
-        <class>org.yu55.pwjpa21.demo01.Journal</class>
-        <class>org.yu55.pwjpa21.demo01.CD</class>
+        <class>org.yu55.pwjpa21.basics.Journal</class>
+        <class>org.yu55.pwjpa21.basics.CD</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-
         </properties>
     </persistence-unit>
 </persistence>

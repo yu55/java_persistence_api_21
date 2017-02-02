@@ -1,4 +1,4 @@
-package org.yu55.pwjpa21.demo01;
+package org.yu55.pwjpa21.basics;
 
 import javax.persistence.*;
 import java.util.Date;

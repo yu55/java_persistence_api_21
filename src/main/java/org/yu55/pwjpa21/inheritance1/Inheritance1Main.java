@@ -9,7 +9,7 @@ public class Inheritance1Main {
 
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("demo01-pu");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("basics-pu");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 

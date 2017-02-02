@@ -1,7 +1,6 @@
-package org.yu55.pwjpa21.demo01;
+package org.yu55.pwjpa21.basics;
 
 import javax.persistence.EntityManager;
-import java.util.Date;
 
 public class CdService {
 

@@ -1,4 +1,4 @@
-package org.yu55.pwjpa21.demo01;
+package org.yu55.pwjpa21.basics;
 
 import org.junit.After;
 import org.junit.Before;
@@ -25,7 +25,7 @@ public class JournalTest {
 
     @Before
     public void initEntityManager() {
-        emf = Persistence.createEntityManagerFactory("demo01-pu-test");
+        emf = Persistence.createEntityManagerFactory("basics-pu-test");
         em = emf.createEntityManager();
         tx = em.getTransaction();
         cdService = new CdService(em);

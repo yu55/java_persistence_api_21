@@ -1,4 +1,4 @@
-package org.yu55.pwjpa21.demo01;
+package org.yu55.pwjpa21.basics;
 
 public enum Genre {
     IT, MATHEMATICS, SOCIOLOGY;
