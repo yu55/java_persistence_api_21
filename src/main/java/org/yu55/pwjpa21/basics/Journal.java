@@ -70,7 +70,7 @@ public class Journal {
     protected Journal() {
     }
 
-    Journal(Long id, String title, Integer numberOfPages, Date releaseDate, Genre genre, Set<CD> cds) {
+    public Journal(Long id, String title, Integer numberOfPages, Date releaseDate, Genre genre, Set<CD> cds) {
         this.id = id;
         this.title = title;
         this.numberOfPages = numberOfPages;
