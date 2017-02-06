@@ -14,7 +14,7 @@ public class QueryMain {
 
         QueryService queryService = new QueryService(em);
 
-        queryService.queryCDs();
+        queryService.queryJournals();
     }
 
 }

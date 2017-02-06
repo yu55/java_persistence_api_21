@@ -14,7 +14,7 @@ class QueryService {
         this.entityManager = entityManager;
     }
 
-    void queryCDs() {
+    void queryJournals() {
         Query query = entityManager.createQuery("SELECT j FROM Journal j");
         List journals = query.getResultList();
 
