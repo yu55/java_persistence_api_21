@@ -6,7 +6,9 @@ import org.yu55.pwjpa21.basics.Journal;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
+import java.util.Date;
 import java.util.List;
 
 class QueryService {
@@ -18,7 +20,8 @@ class QueryService {
     }
 
     void queryJournals() {
-        Query query = entityManager.createQuery("SELECT j FROM Journal j");
+        Query query = entityManager.createQuery("SELECT j FROM Journal j WHERE j.releaseDate <= :releaseDate");
+        query.setParameter("releaseDate", new Date(), TemporalType.DATE);
         List journals = query.getResultList();
 
         System.out.println("queryJournals");
