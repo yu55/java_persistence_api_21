@@ -23,6 +23,7 @@ class QueryService {
         Query query = entityManager.createQuery("SELECT j FROM Journal j WHERE j.releaseDate <= :releaseDate");
         query.setParameter("releaseDate", new Date(), TemporalType.DATE);
         List journals = query.getResultList();
+        query.setMaxResults(10);
 
         System.out.println("queryJournals");
         for (int i=0; i<journals.size(); i++) {
