@@ -43,4 +43,26 @@ class QueryService {
             System.out.println(cd);
         }
     }
+
+    void namedQueryCDs() {
+        TypedQuery<CD> journalTypedQuery = entityManager.createNamedQuery(CD.FIND_BY_ID_AND_GENRE, CD.class);
+        journalTypedQuery.setParameter("id", 1L);
+        journalTypedQuery.setParameter("genre", Genre.IT);
+        List<CD> cds = journalTypedQuery.getResultList();
+        System.out.println("namedQueryCDs");
+        for (int i=0; i<cds.size(); i++) {
+            CD cd = cds.get(i);
+            System.out.println(cd);
+        }
+    }
+
+    void namedQueryAllCDs() {
+        TypedQuery<CD> journalTypedQuery = entityManager.createNamedQuery(CD.FIND_ALL, CD.class);
+        List<CD> cds = journalTypedQuery.getResultList();
+        System.out.println("namedQueryAllCDs");
+        for (int i=0; i<cds.size(); i++) {
+            CD cd = cds.get(i);
+            System.out.println(cd);
+        }
+    }
 }

@@ -2,9 +2,20 @@ package org.yu55.pwjpa21.basics;
 
 import javax.persistence.*;
 
+import static org.yu55.pwjpa21.basics.CD.FIND_ALL;
+import static org.yu55.pwjpa21.basics.CD.FIND_BY_ID_AND_GENRE;
+
 @Entity
+@NamedQueries({
+        @NamedQuery(name=FIND_ALL, query = "SELECT c FROM CD c"),
+        @NamedQuery(name=FIND_BY_ID_AND_GENRE, query = "SELECT c FROM CD c WHERE c.id > :id AND c.genre = :genre")
+})
 @Table(name = "T_CD")
 public class CD {
+
+    public static final String FIND_ALL = "CD.ALL";
+
+    public static final String FIND_BY_ID_AND_GENRE = "CD.FIND_BY_ID_AND_GENRE";
 
     private Long id;
 

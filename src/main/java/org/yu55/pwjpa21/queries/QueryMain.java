@@ -25,6 +25,8 @@ public class QueryMain {
         QueryService queryService = new QueryService(em);
         queryService.queryJournals();
         queryService.queryCDs();
+        queryService.namedQueryCDs();
+        queryService.namedQueryAllCDs();
     }
 
     static void prepareData(EntityManager em, EntityTransaction tx) {
