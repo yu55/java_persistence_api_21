@@ -15,6 +15,7 @@
         <class>org.yu55.pwjpa21.inheritance2.Animal</class>
         <class>org.yu55.pwjpa21.inheritance2.Mammal</class>
         <class>org.yu55.pwjpa21.inheritance2.Reptile</class>
+        <class>org.yu55.pwjpa21.callbacks.Invoice</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
 
