@@ -25,7 +25,11 @@ class Invoice {
 
     //@PostLoad
     //@PostUpdate
-    @PostPersist
+    //@PostPersist
+    //@PostRemove
+    //@PreRemove
+    //@PreUpdate
+    @PrePersist
     private void issueDate() {
         issueDate = new Date();
     }
