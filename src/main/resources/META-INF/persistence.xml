@@ -4,6 +4,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
     <persistence-unit name="basics-pu">
+        <mapping-file>META-INF/listeners.xml</mapping-file>
         <!-- "A list of all named managed persistence classes must be specified in Java SE environments to insure
              portability." @Entity annotation is still needed on entity clases.
              Check: http://stackoverflow.com/questions/1780341/do-i-need-class-elements-in-persistence-xml -->
@@ -16,6 +17,7 @@
         <class>org.yu55.pwjpa21.inheritance2.Mammal</class>
         <class>org.yu55.pwjpa21.inheritance2.Reptile</class>
         <class>org.yu55.pwjpa21.callbacks.Invoice</class>
+        <class>org.yu55.pwjpa21.listeners.Ticket</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/demo01-db;create=true"/>
 
