@@ -91,6 +91,18 @@ public class Journal {
         return cds;
     }
 
+    /*
+    Implementing methods: equals and hashCode
+    From book Java Persistence with Hibernate:
+    "We argue that essentially every entity class should have some business key, even if it includes all properties of
+    the class (this would be appropriate for some immutable classes). The business key is what the user things of as
+    uniquely identifying a particular record, whereas the surrogate key is what the application and database use.
+    Business key equality means that the equals() method compares only the properties that form the business key. This
+    is a perfect solution that avoids all the problems presented earlier. The only downside is that it requires extra
+    thought to identify the correct business key in the first place. This effort is required anyway; it's important to
+    identify any unique keys if your database must ensure data integrity via constraint checking."
+     */
+
     @Override
     public String toString() {
         return "Journal{" +
