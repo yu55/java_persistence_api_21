@@ -43,9 +43,9 @@ public class CdServiceTest {
         // then
         tx.begin();
         cd = em.find(CD.class, id);
+        tx.commit();
         assertEquals("CHIP CD 12/2004", cd.getTitle());
         assertEquals(Genre.IT, cd.getGenre());
         assertEquals("Zone Alarm Free; DoctorTweak XP; OpenOffice.org", cd.getContent());
-        tx.commit();
     }
 }
