@@ -17,6 +17,23 @@ of view it's not possible to instantiate abstract entity.
  */
 @Entity
 @Table(name = "T_JOURNAL")
+/*
+"The persistent state of an entity is accessed by the persistence provider runtime[1] either via JavaBeans
+style property accessors (“property access”) or via instance variables (“field access”). Whether persistent
+properties or persistent fields or a combination of the two is used for the provider’s access to a
+given class or entity hierarchy is determined as described in Section 2.3, “Access Type”."
+When property access mode is used, the same contract as for JavaBeans applies, and there must be getter and setter
+methods for the persistent properties. The type of property is determined by the return type of the getter method and
+must be the same as the type of the single parameter passed into the setter method. Both methods must be either public
+or protected visibility. The mapping annotations for a property must be on the getter method.
+Field access mode is when AccessType.FIELD is used or when fields are annotated. Getter and setter methods might or
+might not be present, but if they are present, they are ignored by the provider. All fields must be declared as either
+protected, package, or private.
+"The instance variables of a class must be private, protected, or package visibility independent of
+whether field access or property access is used. When property access is used, the property accessor
+methods must be public or protected."
+ */
+@Access(AccessType.FIELD)
 public class Journal {
 
     /*
