@@ -12,6 +12,13 @@ from higher entities in hierarchy). Subclass table has to be joined with the roo
 Strategy TABLE_PER_CLASS also has separate table for each entity, but each table has columns from according entity and
 all entities above in hierarchy (denormalized database model). All tables must have matching id column. There is no
 DTYPE column as there are no shared tables or columns.
+For best performance and need to use polymorphic queries and relationships, the single table strategy should be chosen.
+But it's not possible to use null constraints on subclass attributes which increase the risk of data inconsistencies.
+For data consistency more important than performance and you polymorphic queries and relationships, the joined strategy
+is probably best option.
+When polymorphic queries or relationships aren't needed, the table per class strategy is most likely the best fit. It
+allows to use constraints to ensure data consistency and provides an option of polymorphic queries. But polymorphic
+queries are very complex for this table structure and should be avoided.
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
